@@ -1,17 +1,17 @@
 const products = [
-  { id:'m-command', gender:'men', name:'The Command', cut:'Men’s structured winter trench', price:472, image:'assets/men-command.webp', tag:'Military cut', color:'Black', description:'A commanding double-breasted silhouette cut from dense winter wool, with a high collar, broad lapels and a quilted thermal lining.' },
-  { id:'m-regent', gender:'men', name:'The Regent', cut:'Men’s English winter trench', price:424, image:'assets/men-english.webp', tag:'English cut', color:'Camel', description:'Classic English trench architecture reworked for deep winter in warm wool-cashmere, with a storm flap, epaulettes and full-length coverage.' },
-  { id:'m-metro', gender:'men', name:'The Metropolitan', cut:'Men’s minimalist winter trench', price:372, image:'assets/men-modern.webp', tag:'Modern cut', color:'Slate', description:'A clean single-breasted trench with concealed closure, sculpted shoulder and an uninterrupted long line for modern city dressing.' },
-  { id:'w-command', gender:'women', name:'The Command', cut:'Women’s structured winter trench', price:472, image:'assets/women-command.webp', tag:'Military cut', color:'Black', description:'A refined, full-length double-breasted trench with a high collar and precise waist, engineered in dense wool for a severe New York winter.' },
-  { id:'w-regent', gender:'women', name:'The Regent', cut:'Women’s English winter trench', price:424, image:'assets/women-english.webp', tag:'English cut', color:'Camel', description:'An elegant English silhouette with storm flap, belt and warm wool-cashmere construction, offering complete coverage without excess bulk.' },
-  { id:'w-metro', gender:'women', name:'The Metropolitan', cut:'Women’s minimalist winter trench', price:372, image:'assets/women-modern.webp', tag:'Modern cut', color:'Slate', description:'A minimal wrap trench with a soft architectural line, hidden fastening and insulated interior for understated winter protection.' }
+  { id:'m-command', gender:'men', name:'The Command', cut:'Men’s structured winter trench', price:472, image:'assets/men-command.webp', color:'Black', description:'A commanding double-breasted silhouette cut from dense winter wool, with a high collar, broad lapels and a quilted thermal lining.' },
+  { id:'w-command', gender:'women', name:'The Command', cut:'Women’s structured winter trench', price:472, image:'assets/women-command.webp', color:'Black', description:'A refined, full-length double-breasted trench with a high collar and precise waist, engineered in dense wool for a severe New York winter.' },
+  { id:'m-regent', gender:'men', name:'The Regent', cut:'Men’s English winter trench', price:424, image:'assets/men-english.webp', color:'Camel', description:'Classic English trench architecture reworked for deep winter in warm wool-cashmere, with a storm flap, epaulettes and full-length coverage.' },
+  { id:'w-regent', gender:'women', name:'The Regent', cut:'Women’s English winter trench', price:424, image:'assets/women-english.webp', color:'Camel', description:'An elegant English silhouette with storm flap, belt and warm wool-cashmere construction, offering complete coverage without excess bulk.' },
+  { id:'m-metro', gender:'men', name:'The Metropolitan', cut:'Men’s minimalist winter trench', price:372, image:'assets/men-modern.webp', color:'Slate', description:'A clean single-breasted trench with concealed closure, sculpted shoulder and an uninterrupted long line for modern city dressing.' },
+  { id:'w-metro', gender:'women', name:'The Metropolitan', cut:'Women’s minimalist winter trench', price:372, image:'assets/women-modern.webp', color:'Slate', description:'A minimal wrap trench with a soft architectural line, hidden fastening and insulated interior for understated winter protection.' }
 ];
 
 const grid = document.querySelector('[data-product-grid]');
 const money = value => new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(value);
 grid.innerHTML = products.map(p => `<article class="product-card" data-gender="${p.gender}">
   <button class="product-image" type="button" data-product="${p.id}" aria-label="View ${p.name}, ${p.cut}">
-    <img src="${p.image}" alt="${p.cut} in ${p.color}" loading="lazy"><span class="product-tag">${p.tag}</span>
+    <img src="${p.image}" alt="${p.cut} in ${p.color}" loading="lazy">
   </button><div class="product-info"><h3>${p.name}</h3><p>${p.cut}</p><strong>${money(p.price)}</strong></div></article>`).join('');
 
 const filter = value => {
