@@ -41,7 +41,7 @@ h2 { font-size:clamp(2.4rem,4.4vw,5.1rem); }
 .filters { display:flex; gap:8px; }
 .filter { border:1px solid var(--line); background:#fff; padding:10px 17px; cursor:pointer; }
 .filter.active { color:#fff; background:#111; border-color:#111; }
-.product-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:46px 18px; }
+.product-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:60px 18px; }
 .product-card[hidden] { display:none; }
 .product-image { position:relative; aspect-ratio:2/3; overflow:hidden; background:var(--mist); cursor:pointer; }
 .product-image img { height:100%; object-fit:cover; transition:transform .65s cubic-bezier(.2,.7,.2,1); }
